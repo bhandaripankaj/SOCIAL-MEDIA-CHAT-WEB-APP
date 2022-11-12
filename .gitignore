@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# epenencies
+/noe_moules
+/.pnp
+.pnp.js
+package-lock.json
+# testing
+/coverage
+public
+# prouction
+/buil
+
+# misc
+.S_Store
+.env.local
+.env.evelopment.local
+.env.test.local
+.env.prouction.local
+
+npm-ebug.log*
+yarn-ebug.log*
+yarn-error.log*
+node_modules
