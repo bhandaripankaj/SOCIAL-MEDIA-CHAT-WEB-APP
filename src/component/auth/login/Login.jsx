@@ -61,7 +61,7 @@ const Login = () => {
                 alignItems='center'
                 justifyContent={'center'}
                 margin={'auto'}
-                marginRight={"180px"}
+                marginRight={"300px"}
                 marginTop={20}
                 padding={3}
                 sx={{ borderTopRightRadius: 20, borderBottomRightRadius: 20 }}
@@ -90,7 +90,9 @@ const Login = () => {
                     sx={{ marginLeft: 10 }}
                 > Forgot Password</Button>
 
-                <Button className={classes.button} endIcon={<LoginOutlinedIcon />}
+                <Button className={classes.button} 
+                onClick={() => { history('/home') }}
+                   endIcon={<LoginOutlinedIcon />}
                     type="submit" sx={{ marginTop: 3, borderRadius: 3 }}
                     variant="contained" style={{ backgroundColor: "#009688" }}>Login</Button>
                 <Button

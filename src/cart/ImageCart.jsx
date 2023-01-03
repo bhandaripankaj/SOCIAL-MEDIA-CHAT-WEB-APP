@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { Box} from '@mui/material'
+import { Box, useMediaQuery} from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import {sliderData} from '../helpers/index'
 
@@ -69,25 +69,52 @@ const ImageCart = () => {
       setLastSlide(lastSlide=>lastSlide > 0 ? lastSlide - 1 : sliderData.length -1 )
     },5000)
     }, []);
-    
-
-    return <Box 
+ 
+    return (
+      <>
+      <Box position={"relative"}>
+        <Box
     width={400} 
     height={400}
     display="flex"
     justifyContent="center"
     alignItems="center"
+    margin={'auto'}
     position={"absolute"}
-    // marginTop={20}
-    marginLeft={"180px"}
-    >
-      <div className={classes.image1}>
-      <img src={slideImage[lastSlide]?.image}  alt="im2" className={classes.slideImage1}></img>
-      </div>
-      <div className={classes.image2}>
-      <img src={slideImage2[currentSlide]?.image} alt="im2" className={classes.slideImage2}></img>
-      </div>
-    </Box> 
+    // marginTop={20}    
+    marginLeft={"250px"}
+    padding={3}
+        borderTopLeftRadius= {20}
+        borderBottomLeftRadius={20}
+        sx={{borderTopLeftRadius:20,borderBottomLeftRadius:20}}
+
+    color='#009688'
+    backgroundColor= "#009688"
+    style={{clipPath:"polygon(0 0, 100% 0, 59% 100%, 0% 100%)"}}
+    />
+
+     <Box 
+     width={400} 
+     height={400}
+     display="flex"
+     justifyContent="center"
+     alignItems="center"
+     position={"absolute"}
+     // marginTop={20}
+     marginLeft={"250px"}
+     >
+       <div className={classes.image1}>
+       <img src={slideImage[lastSlide]?.image}  alt="im2" className={classes.slideImage1}></img>
+       </div>
+       <div className={classes.image2}>
+       <img src={slideImage2[currentSlide]?.image} alt="im2" className={classes.slideImage2}></img>
+       </div>
+     </Box> 
+     </Box>
+      </>
+    
+    )
+   
 }
 
 export default ImageCart

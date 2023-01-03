@@ -10,9 +10,11 @@ package-lock.json
 # public
 # prouction
 /buil
+/public/assets/
 
 # misc
 .S_Store
+.DS_Store
 .env.local
 .env.evelopment.local
 .env.test.local

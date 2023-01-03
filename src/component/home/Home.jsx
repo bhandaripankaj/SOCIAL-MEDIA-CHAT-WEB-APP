@@ -1,161 +1,37 @@
 import React, { useState,useEffect } from "react";
-import { Box, Typography, Button, TextField ,Stack,Divider,Grid} from '@mui/material'
-import { useNavigate } from "react-router-dom";
-import { makeStyles } from '@mui/styles'
-const useStyles = makeStyles({  
-    hover: {
-        backgroundColor: "#fff",
-        "&:hover": {
-            boxShadow: '10px 10px 30px #ccc'
-        },
-    },
-});
-const Home = () => {    
-    return (
-        <>
-          <Box sx={{ flexGrow: 1 }}>
-        <Box display='flex' 
-    justifyContent={'center'}
-    marginRight={-1}
-    marginLeft={-1}
-    marginTop={-1}
-    borderBottom={1}
-    borderColor={"#e0e0e0"}
-    backgroundColor={"#ffff"}
-    padding={3}
-    >
-        fdfdfg
-        </Box>
+import { Box, Stack, Button, TextField, createTheme, ThemeProvider } from '@mui/material'
 
-         <Box 
-            display='flex' 
-                width={200}
-                height={535}
-                justifyContent={'center'}
-                overflow={"hidden"}
-                
-                sx={{float:"right", borderTopRightRadius:10, ":hover":{overflowY:"auto"}}}
-                marginLeft={-1}
-                marginTop={1}
-                position={"relative"}
-                backgroundColor={"#ffff"}
-                padding={3}
-                >
-                    <ui>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
+import Feed from "./Feed";
+import Rightbar from "./Rightbar";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 
-                    </ui>
-                    </Box>
+const Home = () => {   
+   const [mode,setMode] = useState("light")
+   const darkTheme = createTheme({
+      palette:{
+         mode:mode
+      }
+   }) 
+   return (
+      <ThemeProvider theme={darkTheme}>
        <Box 
-       display='flex' 
-       justifyContent={'center'}
-       width={300}
-       backgroundColor={"#ffff"}
-       padding={3}
-       marginLeft={50}
-       position ={"absolute"} 
-       >
+      // bgcolor={"background.default"} 
+      // color={"text.primary"}
+      >
+        <Navbar/>
+         <Stack direction={"row"}  spacing={2} justifyContent={"space-between"}>
+             <Sidebar setMode={setMode} mode={mode}/>
+             <Box width={"750px"}>
+             <Feed/>
+             </Box>
+              <Rightbar/> 
+          </Stack>
 
-       </Box>
-        <Box 
-            display='flex' 
-                width={200}
-                height={535}
-                justifyContent={'center'}
-                overflow={"hidden"}
-                sx={{ ":hover":{overflowY:"auto"}}}
-                // marginLeft={-1}
-                marginTop={1}
-                position={"relative"}
-                backgroundColor={"#ffff"}
-                padding={3}
-                >
-                    <ui>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                        <li>hh</li>
-                    </ui>
-                    </Box> 
-    </Box>
-    </>
-        
-    )
+         </Box>
+      </ThemeProvider>
+   
+   )
         
 }
 

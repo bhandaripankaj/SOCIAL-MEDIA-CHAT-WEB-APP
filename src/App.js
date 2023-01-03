@@ -6,21 +6,21 @@ import Signup from "./component/auth/signUp/Signup";
 import ForgotPassword from "./component/auth/forgotPassword/ForgotPassword";
 import Landing from "./component/landing/Landing";
 import Profile from "./component/auth/profile/Profile";
-import ImageBox from "./cart/ImageBox";
 import ImageCart from "./cart/ImageCart";
 import PrivateRoute from './router/PrivateRoutes'
+import { useMediaQuery } from "@mui/material";
 // import Home from './component/home/Home'
 
 const Layout = ({children})=>{
+  const matches = useMediaQuery('(max-width:600px)');
+
 return (
   <>
-   <ImageBox/>
-       <ImageCart/>
+      {!matches && <ImageCart/>} 
        {children}
        </>
 )
 }
-
 const App = () => {
   return (
     <>

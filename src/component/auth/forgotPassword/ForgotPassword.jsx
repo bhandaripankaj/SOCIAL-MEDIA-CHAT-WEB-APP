@@ -68,7 +68,7 @@ const ForgotPassword = () => {
                 alignItems='center'
                 justifyContent={'center'}
                 margin={'auto'}
-                marginRight={"180px"}
+                marginRight={"300px"}
                 marginTop={20}
                 padding={3}
                 sx={{ borderTopRightRadius: 20, borderBottomRightRadius: 20 }}
@@ -110,11 +110,11 @@ const ForgotPassword = () => {
 
                 )}
                 {isSignup && (<Button className={classes.button}
+                onClick={() => { history('/home') }}
                     endIcon={<CloudDoneOutlinedIcon />}
                     type="submit" sx={{ marginTop: 3, borderRadius: 3 }}
                     variant="contained" style={{ backgroundColor: "#009688" }}>Set Password</Button>
                 )}
-
                 {!isSignup && (
                     <Button
                         onClick={() => { history('/login') }}

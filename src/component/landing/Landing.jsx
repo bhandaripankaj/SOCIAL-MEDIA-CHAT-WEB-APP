@@ -7,9 +7,9 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 const useStyles = makeStyles({
     hover: {
         backgroundColor: "#fff",
-        "&:hover": {
-            boxShadow: '10px 10px 30px #ccc'
-        },
+        // "&:hover": {
+        //     boxShadow: '10px 10px 30px #ccc'
+        // },
     },
     button: {
         color: "#009688"
@@ -27,14 +27,15 @@ const useStyles = makeStyles({
 const Landing = () => {
     const history = useNavigate();
     const classes = useStyles();
-    return (<Box
+    return (
+    <Box
         display='flex'
         justifyContent='center'
         alignItems='center'
         margin={'auto'}
-        marginRight={"180px"}
-        width={450}
-        height={400}
+        marginRight={"300px"}
+         maxWidth={450}
+          height={400}
         flexDirection={"row"}
         marginTop={20}
         padding={3}
@@ -50,7 +51,7 @@ const Landing = () => {
         <Button className={classes.button}
             onClick={() => { history('/home') }}
             endIcon={<ArrowForwardOutlinedIcon />}
-            sx={{ marginTop: 15, marginLeft: 10, borderRadius: 2 }}
+            sx={{ marginTop: 20, marginLeft: 10, borderRadius: 2 }}
             variant="contained" style={{ backgroundColor: "#009688" }}>continue as Pankaj Bhandari</Button>
 
         <Button
@@ -58,7 +59,8 @@ const Landing = () => {
             sx={{ marginTop: 40, marginLeft: -40 }}
         > <span style={{ color: "black" }}>Not Pankaj Bhandari? </span>Switch Account</Button>
 
-    </Box>)
+    </Box>
+    )
 
 
 }

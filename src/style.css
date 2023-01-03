@@ -1,0 +1,26 @@
+.foo {
+    /* background-color: red; */
+    width: 100%;
+    margin: 0 auto;
+  
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      width: 75%;
+      background-color: green;
+    }
+  
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      width: 50%;
+      background-color: pink;
+    }
+  }
+  *{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+  scroll-behavior: smooth;
+}

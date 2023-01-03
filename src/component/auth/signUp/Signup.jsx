@@ -68,8 +68,8 @@ const Signup = () => {
                 alignItems='center' 
                 justifyContent={'center'}
                 margin={'auto'}
-                marginRight={"180px"}
-                marginTop={20}
+                marginRight={"300px"}
+                                marginTop={20}
                 padding={3}
                 sx={{ borderTopRightRadius: 20, borderBottomRightRadius: 20 }}
                 color='#009688'
@@ -98,7 +98,9 @@ const Signup = () => {
                     value={inputs.password}
                     margin="normal"
                     type={'password'} variant='outlined' placeholder="Password" />
-                <Button className={classes.button} endIcon={<HowToRegOutlinedIcon />}
+                <Button className={classes.button} 
+                    onClick={() => { history('/home') }}
+                    endIcon={<HowToRegOutlinedIcon />}
                     type="submit" sx={{ marginTop: 3, borderRadius: 3 }}
                     variant="contained"  style={{backgroundColor:"#009688"}}>Signup</Button>
                 <Button
