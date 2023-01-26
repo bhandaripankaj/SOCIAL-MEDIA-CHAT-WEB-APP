@@ -1,8 +1,8 @@
 {
+  "homepage": "https://bhandaripankaj.github.io/SOCIAL-MEDIA-CHAT-WEB-APP/",
   "name": "auth-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bhandaripankaj.github.io/SOCIAL-MEDIA-CHAT-WEB-APP/",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
