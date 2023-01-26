@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SOCIAL-MEDIA-CHAT-WEB-APP/static/css/main.72ad8cf3.css",
+    "main.js": "/SOCIAL-MEDIA-CHAT-WEB-APP/static/js/main.dbb92d5b.js",
+    "index.html": "/SOCIAL-MEDIA-CHAT-WEB-APP/index.html",
+    "main.72ad8cf3.css.map": "/SOCIAL-MEDIA-CHAT-WEB-APP/static/css/main.72ad8cf3.css.map",
+    "main.dbb92d5b.js.map": "/SOCIAL-MEDIA-CHAT-WEB-APP/static/js/main.dbb92d5b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72ad8cf3.css",
+    "static/js/main.dbb92d5b.js"
+  ]
+}
