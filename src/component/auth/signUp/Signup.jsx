@@ -33,38 +33,64 @@ const useStyles = makeStyles({
 });
 const Signup = () => {
     const history = useNavigate();
-
     const classes = useStyles();
-
-
-    const [isSignup, setIsSigup] = useState(false)
-
-    const [inputs, setInputs] = useState({
-        name: "",
-        email: "",
-        password: ""
-    })
+    const [formValues, setFormValues] = useState({
+        name:{
+          value:'',
+          error:false,
+          errorMessage:'You must enter a name'
+        },
+        email:{
+          value:"",
+          error:false,
+          errorMessage:'You must enter an email'
+        },
+        password:{
+          value:'',
+          error:false,
+          errorMessage:'You must enter your password'
+        },
+      })
     const handleChange = (e) => {
-        setInputs((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value
-        }))
+        const {name, value} = e.target;
+        setFormValues({
+          ...formValues,
+          [name]:{
+            ...formValues[name],
+            value
+          }
+        })
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
-        history('/profile')
-    }
-    const resetState = () => {
-        setIsSigup(!isSignup)
-        setInputs({ name: "", email: "", password: "" })
-    }
+        e.preventDefault();
+        let newFormValues = {...formValues}
+        if(!newFormValues.email.value){
+          newFormValues.email.error = true
+        } else {
+          newFormValues.email.error = false
+        }
+        if(!newFormValues.password.value){
+          newFormValues.password.error = true
+        } else {
+          newFormValues.password.error = false
+        }
+        if(!newFormValues.name.value){
+          newFormValues.name.error = true
+        } else {
+          newFormValues.name.error = false
+        }
+        setFormValues(newFormValues)
+       if(!newFormValues.email.error && !newFormValues.password.error && !newFormValues.name.error) {
+        history('/home')
+       }
+      }
 
     return <div>
         <form onSubmit={handleSubmit}>
             <Box display='flex' 
             flexDirection={"column"}
             width={450}
-            height={400}
+            height={450}
                 alignItems='center' 
                 justifyContent={'center'}
                 margin={'auto'}
@@ -81,27 +107,31 @@ const Signup = () => {
                 <TextField name="name"
                     className={classes.root}
                     onChange={handleChange}
-                    value={inputs.name}
+                    error={formValues.name.error}
+                    helperText={formValues.name.error && formValues.name.errorMessage}
+                    value={formValues.name.value}
                     margin="normal" type={'text'}
                     variant='outlined' placeholder="Name" />
 
                 <TextField className={classes.root} name="email"
                     onChange={handleChange}
-
-                    value={inputs.email}
+                    error={formValues.email.error}
+                    helperText={formValues.email.error && formValues.email.errorMessage}
+                    value={formValues.email.value}
                     margin="normal" type={'email'}
                     variant='outlined' placeholder="Email" />
 
                 <TextField name="password"
                     className={classes.root}
                     onChange={handleChange}
-                    value={inputs.password}
+                    error={formValues.password.error}
+                    helperText={formValues.password.error && formValues.password.errorMessage}
+                    value={formValues.password.value}
                     margin="normal"
                     type={'password'} variant='outlined' placeholder="Password" />
                 <Button className={classes.button} 
-                    onClick={() => { history('/home') }}
                     endIcon={<HowToRegOutlinedIcon />}
-                    type="submit" sx={{ marginTop: 3, borderRadius: 3 }}
+                    type="submit" name="submit" sx={{ marginTop: 3, borderRadius: 3 }}
                     variant="contained"  style={{backgroundColor:"#009688"}}>Signup</Button>
                 <Button
                     endIcon={<LoginOutlinedIcon />}

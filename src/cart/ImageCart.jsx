@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { Box, useMediaQuery} from '@mui/material'
+import { Box} from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import {sliderData} from '../helpers/index'
 
@@ -75,7 +75,7 @@ const ImageCart = () => {
       <Box position={"relative"}>
         <Box
     width={400} 
-    height={400}
+    height={450}
     display="flex"
     justifyContent="center"
     alignItems="center"
@@ -95,7 +95,7 @@ const ImageCart = () => {
 
      <Box 
      width={400} 
-     height={400}
+     height={503}
      display="flex"
      justifyContent="center"
      alignItems="center"
