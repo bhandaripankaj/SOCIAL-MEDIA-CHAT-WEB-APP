@@ -9,7 +9,7 @@ package-lock.json
 /coverage
 # public
 # prouction
-/buil
+/build
 /public/assets/
 
 # misc
